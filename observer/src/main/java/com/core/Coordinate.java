@@ -1,15 +1,29 @@
 package com.core;
 
-import java.util.HashSet;
 
 public class Coordinate {
 
-	private HashSet<Activity> activities;
 	private int posX, posY;
 	
 	public Coordinate(int posX2, int posY2) {
 		this.posX = posX2;
 		this.posY = posY2;
+	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
 	}
 
 	@Override
@@ -37,29 +51,5 @@ public class Coordinate {
 		return true;
 	}
 
-	public int getPosX() {
-		return posX;
-	}
-
-	public void setPosX(int posX) {
-		this.posX = posX;
-	}
-
-	public int getPosY() {
-		return posY;
-	}
-
-	public void setPosY(int posY) {
-		this.posY = posY;
-	}
-
-	public HashSet<Activity> getActivities() {
-		return activities;
-	}
-
-	public void setActivities(HashSet<Activity> activities) {
-		this.activities = activities;
-	}
 	
-
 }

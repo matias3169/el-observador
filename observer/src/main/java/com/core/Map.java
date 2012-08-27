@@ -11,6 +11,10 @@ public class Map {
 	public void setSearchCoordinates(Coordinate coordinate) {
 		search_coordinate = coordinate;		
 	}
+	
+	public Coordinate getSearchCoordinates() {
+		return search_coordinate;		
+	}
 
 	public void setCoordinates(HashMap<Coordinate,HashSet<Activity>> coordinates) {
 		this.coordinates = coordinates;		
@@ -20,8 +24,15 @@ public class Map {
 		return coordinates;
 	}
 
-	public HashSet<Activity> getListOfActivitiesFromCurrentPosition() {		
-		return coordinates.get(search_coordinate);
+	public HashSet<Activity> getListOfActivitiesFromCurrentPosition() throws Exception{
+		
+		HashSet<Activity> temp_activities = coordinates.get(search_coordinate);
+		
+		if (temp_activities == null) {
+			throw new Exception("There are no activities in coordinate - PosX:" + search_coordinate.getPosX() + " PosY:" + search_coordinate.getPosY());
+		} 
+		
+		return temp_activities;
 
 	}
 

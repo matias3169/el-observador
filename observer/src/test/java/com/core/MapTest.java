@@ -50,10 +50,22 @@ public class MapTest {
 	     map.setSearchCoordinates(coordinate);
 	  }
 
-	  @Then("I can get list of activities from that position$")
-	  public void iCanGetListOfActivities() {
-	    Assert.assertFalse(map.getListOfActivitiesFromCurrentPosition().isEmpty());
+	  @Then("I can get list of activities for that position$")
+	  public void I_Can_Get_List_Of_Activities() {
+	    try {
+			Assert.assertFalse(map.getListOfActivitiesFromCurrentPosition().isEmpty());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	  }
 
+	  @Then("I get message No activities for that position$") 
+	  public void I_Print_No_Activities_Message() {
+	    try {
+			map.getListOfActivitiesFromCurrentPosition();
+		} catch (Exception e) {
+			Assert.assertEquals("There are no activities in coordinate - PosX:" + map.getSearchCoordinates().getPosX() +" PosY:"+ map.getSearchCoordinates().getPosY(), e.getMessage());
+		}
+	  }
 
 }
