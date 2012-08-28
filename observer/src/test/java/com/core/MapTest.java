@@ -3,6 +3,7 @@ package com.core;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import cucumber.annotation.en.And;
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
@@ -11,30 +12,36 @@ import org.junit.Assert;
 
 public class MapTest {
 
-	  private static String EXCEPTION_MESSAGE = "There are no activities in coordinate - PosX:";
 	  private Map map;
+	  private Activity activity;
+	  private static final int TESTID = 1;
+	  private static final String TESTDESCRIPTION = "Activity1";
 	  HashMap<Coordinate,HashSet<Activity>> coordinates;
 	  
-	  @Given("^I have a map")
+	  @Given("^I have a map$")
 	  public void I_have_a_map() {
 	    map = Map.getInstance();
 	  }
 
-	  @Given("Map has coordinates")
+	  @And("^Map has coordinates$")
 	  public void Map_has_coordinates() {
 		coordinates = new HashMap<Coordinate,HashSet<Activity>>();
 				
-		coordinates.put(new Coordinate(0,0), null);
-		coordinates.put(new Coordinate(10,10), null);
+		coordinates.put(new Coordinate(0,0), new HashSet<Activity>());
+		coordinates.put(new Coordinate(10,10), new HashSet<Activity>());
 		
 	    map.setCoordinates(coordinates);
 
 	  }
 	  
-	  @Given("Coordinates have activities")
+	  @And("^Coordinates have activities$")
 	  public void Coordinates_have_activities() {
 		HashSet<Activity>  activities = new HashSet<Activity>();
-	    activities.add(new Activity());
+		
+		Activity temp_activity = new Activity();
+		temp_activity.setId(TESTID);
+		temp_activity.setDescription(TESTDESCRIPTION);
+	    activities.add(temp_activity);
 	    activities.add(new Activity());
 	    
 	    coordinates = map.getCoordinates();
@@ -45,28 +52,35 @@ public class MapTest {
 	    
 	  }
 
-	  @When("I give positionX (\\d+) positionY (\\d+) to Map")
+	  @When("^I give positionX (\\d+) positionY (\\d+) to Map$")
 	  public void I_give_coordinates(int posX, int posY) {
 		 Coordinate coordinate = new Coordinate(posX,posY);
 	     map.setSearchCoordinates(coordinate);
 	  }
+	  
+	  @And("^I choose activity (\\d+)$")
+	  public void I_choose_activity(int activityID) {
+		 Activity searched_activity = new Activity();
+		 searched_activity.setId(activityID);
+		 this.activity = map.getActivityFromCurrentPosition(searched_activity);
+	  }
 
-	  @Then("I can get list of activities for that position$")
+	  @Then("^I can get list of activities for that position$")
 	  public void I_Can_Get_List_Of_Activities() {
-	    try {
-			Assert.assertFalse(map.getListOfActivitiesFromCurrentPosition().isEmpty());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		  Assert.assertFalse(map.getListOfActivitiesFromCurrentPosition().isEmpty());
 	  }
 
-	  @Then("I get message No activities for that position$") 
-	  public void I_Print_No_Activities_Message() {
-	    try {
-			map.getListOfActivitiesFromCurrentPosition();
-		} catch (Exception e) {
-			Assert.assertEquals(EXCEPTION_MESSAGE + map.getSearchCoordinates().getPosX() + " PosY:" + map.getSearchCoordinates().getPosY(), e.getMessage());
-		}
+	  @Then("^I get empty list of activities for that position$") 
+	  public void I_Get_Empty_List_Of_Activities() {
+		  Assert.assertTrue(map.getListOfActivitiesFromCurrentPosition().isEmpty());
 	  }
+	  
+	  @Then("^I get details from activity") 
+	  public void I_Get_Details_From_Activity() {
+		  Assert.assertEquals(TESTID,this.activity.getId());
+		  Assert.assertEquals(TESTDESCRIPTION,this.activity.getDescription());
+	  }
+	  
+	  
 
 }

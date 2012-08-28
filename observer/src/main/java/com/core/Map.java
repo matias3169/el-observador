@@ -2,6 +2,7 @@ package com.core;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class Map {
 
@@ -39,16 +40,25 @@ public class Map {
 		return coordinates;
 	}
 
-	public HashSet<Activity> getListOfActivitiesFromCurrentPosition() throws Exception{
-		
-		HashSet<Activity> temp_activities = coordinates.get(search_coordinate);
-		
-		if (temp_activities == null) {
-			throw new Exception("There are no activities in coordinate - PosX:" + search_coordinate.getPosX() + " PosY:" + search_coordinate.getPosY());
-		} 
-		
-		return temp_activities;
+	public HashSet<Activity> getListOfActivitiesFromCurrentPosition(){		
+		return coordinates.get(search_coordinate);
+	}
 
+	public Activity getActivityFromCurrentPosition(Activity activity) {
+
+		Iterator<Activity> it = getListOfActivitiesFromCurrentPosition().iterator();
+		Activity it_activity = null;
+		boolean found = false;
+		
+		while (it.hasNext() && (found == false)) {
+			it_activity = (Activity) it.next();
+			
+			if (it_activity.equals(activity)){
+				found = true;
+			}	
+		}
+		
+		return it_activity;
 	}
 
 }
