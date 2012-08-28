@@ -11,12 +11,13 @@ import org.junit.Assert;
 
 public class MapTest {
 
+	  private static String EXCEPTION_MESSAGE = "There are no activities in coordinate - PosX:";
 	  private Map map;
 	  HashMap<Coordinate,HashSet<Activity>> coordinates;
 	  
 	  @Given("^I have a map")
 	  public void I_have_a_map() {
-	    map = new Map();
+	    map = Map.getInstance();
 	  }
 
 	  @Given("Map has coordinates")
@@ -64,7 +65,7 @@ public class MapTest {
 	    try {
 			map.getListOfActivitiesFromCurrentPosition();
 		} catch (Exception e) {
-			Assert.assertEquals("There are no activities in coordinate - PosX:" + map.getSearchCoordinates().getPosX() +" PosY:"+ map.getSearchCoordinates().getPosY(), e.getMessage());
+			Assert.assertEquals(EXCEPTION_MESSAGE + map.getSearchCoordinates().getPosX() + " PosY:" + map.getSearchCoordinates().getPosY(), e.getMessage());
 		}
 	  }
 

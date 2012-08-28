@@ -5,9 +5,24 @@ import java.util.HashSet;
 
 public class Map {
 
+	private static Map map;
+	private static boolean exists = false;
 	private HashMap<Coordinate,HashSet<Activity>> coordinates;
 	private Coordinate search_coordinate;
 	
+	private Map(){
+    }
+	 
+    public static Map getInstance() 
+    {
+	    if(exists == false) {
+	        map = new Map();
+	        exists = true;
+	    }
+	    
+	    return map;
+    }
+    
 	public void setSearchCoordinates(Coordinate coordinate) {
 		search_coordinate = coordinate;		
 	}
