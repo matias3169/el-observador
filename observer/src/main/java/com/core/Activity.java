@@ -1,9 +1,12 @@
 package com.core;
 
+import java.util.HashSet;
+
 public class Activity {
 
 	private int id;
 	private String description;
+	private HashSet<Audio> audioGallery;
 	
 	public String getDescription() {
 		return description;
@@ -43,6 +46,14 @@ public class Activity {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+	public void setAudioGallery(HashSet<Audio> audioGallery) {
+		this.audioGallery = audioGallery;
+	}
+
+	public HashSet<Audio> getAudioGallery() {
+		return audioGallery;
 	}
 
 }

@@ -23,3 +23,5 @@ Feature: Get activities for a position
 		When I give positionX 0 positionY 0 to Map
 		And I choose activity 1 
 		Then I get details from activity	
+		
+	
