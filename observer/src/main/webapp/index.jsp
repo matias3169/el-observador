@@ -1,7 +1,4 @@
-<html>
-  <head><title>Observer</title></head>
-  <body>
-    <h1>Observer - Spring Application</h1>
-    <p>Login page.</p>
-  </body>
-</html>
+<%@ include file="/WEB-INF/views/include.jsp" %>
+
+<%-- Redirected because we can't set the welcome page to a virtual URL. --%>
+<c:redirect url="/showMap.htm"/>
