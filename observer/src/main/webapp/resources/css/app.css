@@ -1,0 +1,98 @@
+/*
+ * This file is provided for application-specific style rules.
+ *
+ * By default, Maqetta includes this CSS file within HTML pages
+ * authored in Maqetta.
+ *
+ * This file is typically used to override style rules found in
+ * theme CSS files. For example, suppose the theme CSS file has:
+ *
+ * .claro .dijitButton .dijitButtonNode {
+ *		padding:2px 4px 4px 4px;
+ * }
+ *
+ * But for your application suppose you want to tighten the padding
+ * for buttons. Then, you might include the following style rule
+ * in this file (assuming that you accept Maqetta's default where
+ * id "myapp" is present on the BODY element, and assuming
+ * that you are using the "claro" theme):
+ *
+ * #myapp.claro .dijitButton .dijitButtonNode {
+ *		padding:1px 3px 3px 3px;
+ * }
+ *
+ * Because of CSS precedence rules (see [1]), the above style rule
+ * (which begins with #myapp.claro) will "win the cascade" versus 
+ * the style rule from the theme CSS file due to the use of the
+ * ID select (#myapp), which has higher specificity than the class
+ * selectors used throughout the Claro theme.
+ *
+ * [1] http://www.w3.org/TR/CSS21/cascade.html#cascade
+ */
+html,body {
+	height: 100%;
+	width: 100%;
+	margin: 0px !important;
+}
+
+#menu-izquierdo
+{
+float:left;
+-margin-top:25px;
+}
+
+#menu-derecho
+{
+float:right;
+width: 88px;
+-margin-top:25px;
+}
+
+#items-menu-derecho
+{
+	margin: -20px;
+	position: relative;
+	left: 0px;
+	display: block;
+	float: left;
+	margin-top: 20px;
+	list-style-type:none;
+}
+
+ul li.menuIzquierdo{
+	
+	margin-bottom: 30px;
+	margin-right: 50px;
+	
+}
+
+#map_canvas{
+left: 0px;
+top:0px;
+float:none;
+-width:87%;
+width:auto;
+height:100%
+
+}
+#cabecera
+{
+background-image: -webkit-gradient(linear, left top, left bottom, from(#9b9696), to(#ebe9e9));
+background-image: -o-linear-gradient(#9b9696, #ebe9e9);
+background-image: -ms-linear-gradient(#9b9696, #ebe9e9);
+background-image: -moz-linear-gradient(#9b9696, #ebe9e9);
+background-image: -webkit-linear-gradient(#9b9696, #ebe9e9);
+background-image: linear-gradient(#9b9696, #ebe9e9);
+height: 72px;
+z-index:10;
+-border-bottom-color:#ff0000;
+}
+
+#logo
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+ 
