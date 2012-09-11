@@ -13,6 +13,7 @@
  <script type="text/javascript" src="resources/js/jquery.tipTip.minified.js"></script>
  <script type="text/javascript" src="resources/js/jquery.jrumble.1.3.js"></script>
  <script type="text/javascript" src="resources/js/scripts.js"></script>
+  <script type="text/javascript" src="resources/js/maps.js"></script>
 
 </head>
 
@@ -27,7 +28,7 @@
   <ul style="margin: -20px; position: relative; left: 0px; display: block; float: left; margin-top: 100px;list-style-type:none;">
  <li class="menuIzquierdo">
   <div id="item1">
-   <img id="favoritos" class="someClass" src="resources/img/sitios_interes_gris.png" alt="Smiley face" width="50" height="50" text="Visulaiza tus lugares favoritos"/>
+   <img id="favoritos" onclick="ShowMyPlaces();" class="someClass" src="resources/img/sitios_interes_gris.png" alt="Smiley face" width="50" height="50" text="Visulaiza tus lugares favoritos"/>
   </div>
  </li>
     <li class="menuIzquierdo">
@@ -48,7 +49,10 @@
   </ul>
 
   </div>
+  
   <div id="map_canvas" style=""></div>
-  <img id="logo" src="resources/img/el-mundo.png" style="width: 150px; height: 150px;"></img>
+  	<img id="logo" src="resources/img/el-mundo.png" style="width: 150px; height: 150px;"></img>
  </div>
+ 
+<%@include file="activity.jsp" %>
 </body></html>
