@@ -1,9 +1,11 @@
 package com.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +16,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.core.Activity;
@@ -35,6 +38,17 @@ public class ObserverController {
 
 	        return new ModelAndView("showMap", "date", now);
 	    }
+	    
+	    @RequestMapping(value="/getCordinates", method = RequestMethod.GET)
+		public @ResponseBody List<Coordinate> getCordinatesInJSON(/*@PathVariable int id*/) {
+	 
+	    	List<Coordinate> coordinates = new ArrayList<Coordinate>();
+			coordinates.add(new Coordinate(0,0));
+			coordinates.add(new Coordinate(10,10));
+			
+			return coordinates;
+	 
+		}
 
 	    @RequestMapping(value="/showActivities.htm", method = RequestMethod.GET)
 	    public ModelAndView handleRequestShowActivities(HttpServletRequest request, HttpServletResponse response)
