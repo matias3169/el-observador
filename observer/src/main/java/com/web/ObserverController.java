@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,8 @@ public class ObserverController {
 	    public ModelAndView handleRequestShowMap(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
 
+	    	createMap();
+	    	
 	        logger.info("Returning showMap view");
 
 	        String now = (new Date()).toString();
@@ -40,14 +43,16 @@ public class ObserverController {
 	    }
 	    
 	    @RequestMapping(value="/getCordinates", method = RequestMethod.GET)
-		public @ResponseBody List<Coordinate> getCordinatesInJSON(/*@PathVariable int id*/) {
+		public @ResponseBody Set<Coordinate> getCordinatesInJSON(/*@PathVariable int id*/) {
 	 
-	    	List<Coordinate> coordinates = new ArrayList<Coordinate>();
-			coordinates.add(new Coordinate(0,0));
-			coordinates.add(new Coordinate(10,10));
+	    	//Obtaining a new map instance
+	        Map map = Map.getInstance();
+	      
+//	    	List<Coordinate> coordinates = new ArrayList<Coordinate>();
+//			coordinates.add(new Coordinate(0,0));
+//			coordinates.add(new Coordinate(10,10));
 			
-			return coordinates;
-	 
+			return map.getCoordinates().keySet();
 		}
 
 	    @RequestMapping(value="/showActivities.htm", method = RequestMethod.GET)
@@ -56,13 +61,31 @@ public class ObserverController {
 
 	        logger.info("Entering showActivities handler");
 	        
-	        //Obtaining a new map instance
+//	        Map map = createMap();
+//		    
+//		    //Obtaining positions from map
+//	        int coordenadaX = Integer.parseInt(request.getParameter("coordenadaX").toString());
+//	        int coordenadaY = Integer.parseInt(request.getParameter("coordenadaY").toString());
+//	        
+//		    //Setting search coordinates	        
+//	        map.setSearchCoordinates(new Coordinate(coordenadaX, coordenadaY));
+//	        
+//	        ModelAndView result = new ModelAndView("showActivities");
+//		    //Obtaining list of activities
+//	        result.addObject("activities", map.getListOfActivitiesFromCurrentPosition());
+//	        
+	        return null;
+	    }
+
+		private void createMap() {
+			//Obtaining a new map instance
 	        Map map = Map.getInstance();
 	        
 	        //Creating coordinates for map
 			HashMap<Coordinate, HashSet<Activity>> coordinates = new HashMap<Coordinate,HashSet<Activity>>();
 			coordinates.put(new Coordinate(0,0), new HashSet<Activity>());
 			coordinates.put(new Coordinate(10,10), new HashSet<Activity>());
+			coordinates.put(new Coordinate(60,100), new HashSet<Activity>());
 		    map.setCoordinates(coordinates);
 		    
 	        //Creating activities for coordinates		    
@@ -78,19 +101,6 @@ public class ObserverController {
 		    for (Coordinate coord : coordinates.keySet()) {
 		    	coordinates.put(coord, activities);
 			}
-		    
-		    //Obtaining positions from map
-	        int coordenadaX = Integer.parseInt(request.getParameter("coordenadaX").toString());
-	        int coordenadaY = Integer.parseInt(request.getParameter("coordenadaY").toString());
-	        
-		    //Setting search coordinates	        
-	        map.setSearchCoordinates(new Coordinate(coordenadaX, coordenadaY));
-	        
-	        ModelAndView result = new ModelAndView("showActivities");
-		    //Obtaining list of activities
-	        result.addObject("activities", map.getListOfActivitiesFromCurrentPosition());
-	        
-	        return result;
-	    }
+		}
 
 }
