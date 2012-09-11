@@ -73,22 +73,50 @@ $("#favoritos").mouseout(function(){
 });
 });
 
-//--------------------------------------------------------------------------------
-//			Scripts de google maps
-//--------------------------------------------------------------------------------
- function initialize() {
-    //temblar();
-	
-	var latlng = new google.maps.LatLng(-34.9118767, -57.95701059999999);
-    var myOptions = {
-      zoom: 13,
-      center: latlng,
-      mapTypeId: google.maps.MapTypeId.TERRAIN
-    };
-    var map = new google.maps.Map(document.getElementById("map_canvas"),
-        myOptions);
+
+//-------------------------------------------------------------------------------
+//scripts de la ventana modal de la actividad
+//-------------------------------------------------------------------------------
+
+function showActivity()
+{
+    //Get the screen height and width
+    var maskHeight = $(document).height();
+    var maskWidth = $(window).width();
+ 
+    //Set height and width to mask to fill up the whole screen
+    $('#mask').css({'width':maskWidth,'height':maskHeight});
     
-    $.getJSON("getCordinates.htm", function(json) {
-    	console.log(json);
-	});
-  }
+    //transition effect     
+    $('#mask').fadeIn(10);    
+    $('#mask').fadeTo("slow",0.8);  
+    
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();
+          
+    //Set the popup window to center
+    $("#dialog").css('top',  winH/2-$("#dialog").height()/2);
+    $("#dialog").css('left', winW/2-$("#dialog").width()/2);
+ 
+    //transition effect
+    $("#dialog").fadeIn(250); 
+}
+
+$(document).ready(function() {  
+	 
+     
+    //if close button is clicked
+    $('.window .close').click(function (e) {
+        //Cancel the link behavior
+        e.preventDefault();
+        $('#mask, .window').hide();
+    });     
+     
+    //if mask is clicked
+    $('#mask').click(function () {
+        $(this).hide();
+        $('.window').hide();
+    });         
+     
+});
