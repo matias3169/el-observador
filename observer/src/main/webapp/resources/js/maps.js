@@ -22,8 +22,8 @@ var POSITION;
 //Funciona llamada para inicializar el mapa
 //
 //--------------------------------------------------------
-function initialize()
- {	
+$(document).ready(function(){
+	
 	$.getJSON("getCordinates/1", function(json) {
     	console.log(json);
 	});
@@ -46,7 +46,8 @@ function initialize()
     google.maps.event.addListener(MAP, 'click', function(event) {
     	placeMarker(event.latLng);
       });
-  }
+	
+});
  
 //-----------------------------------------------------------------------------------
 //Descripcion: Funcion para colocar un marcador en el mapa

@@ -4,7 +4,7 @@
 
  <head>
  <meta charset="utf-8"/>
- <title>Untitled</title>
+ <title>El Observador</title>
     <link href="resources/css/app.css" rel="stylesheet" type="text/css" media="all"/>
  <link href="resources/css/tipTip.css" rel="stylesheet" type="text/css" media="all"/>
  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
@@ -18,7 +18,7 @@
 </head>
 
 
- <body dvFlowLayout="true" data-davinci-ws="collapse" onload="initialize()" class="claro" id="myapp">
+ <body dvFlowLayout="true" data-davinci-ws="collapse" class="claro" id="myapp">
  <div id="principal" style="height: 649px;">
   <div id="cabecera" style="border: 1px solid black;">
 
