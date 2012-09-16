@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,7 +30,7 @@ public class ObserverController {
 
 	    protected final Log logger = LogFactory.getLog(getClass());
 
-	    @RequestMapping(value="/showMap.htm", method = RequestMethod.GET)
+	    @RequestMapping(value="/showMap", method = RequestMethod.GET)
 	    public ModelAndView handleRequestShowMap(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
 
@@ -42,8 +43,10 @@ public class ObserverController {
 	        return new ModelAndView("showMap", "date", now);
 	    }
 	    
-	    @RequestMapping(value="/getCordinates", method = RequestMethod.GET)
-		public @ResponseBody Set<Coordinate> getCordinatesInJSON(/*@PathVariable int id*/) {
+	    @RequestMapping(value="/getCordinates/{id}", method = RequestMethod.GET)
+		public @ResponseBody Set<Coordinate> getCordinatesInJSON(@PathVariable int id) {
+	    	
+	    	logger.info("Id: "+id);
 	 
 	    	//Obtaining a new map instance
 	        Map map = Map.getInstance();

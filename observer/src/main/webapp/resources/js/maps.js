@@ -24,7 +24,7 @@ var POSITION;
 //--------------------------------------------------------
 function initialize()
  {	
-	$.getJSON("getCordinates.htm", function(json) {
+	$.getJSON("getCordinates/1", function(json) {
     	console.log(json);
 	});
 	//getCurrentLocation();
