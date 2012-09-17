@@ -43,6 +43,12 @@ public class ObserverController {
 	        return new ModelAndView("showMap", "date", now);
 	    }
 	    
+	    @RequestMapping(value="/getDefaultCordinate", method = RequestMethod.GET)
+		public @ResponseBody Coordinate getDefaultCordinateInJSON() {
+	    	
+	    	return new Coordinate(-34.9118767, -57.95701059999999); // La Plata
+		}
+	    
 	    @RequestMapping(value="/getCordinates/{id}", method = RequestMethod.GET)
 		public @ResponseBody Set<Coordinate> getCordinatesInJSON(@PathVariable int id) {
 	    	
@@ -86,9 +92,12 @@ public class ObserverController {
 	        
 	        //Creating coordinates for map
 			HashMap<Coordinate, HashSet<Activity>> coordinates = new HashMap<Coordinate,HashSet<Activity>>();
-			coordinates.put(new Coordinate(0,0), new HashSet<Activity>());
-			coordinates.put(new Coordinate(10,10), new HashSet<Activity>());
-			coordinates.put(new Coordinate(60,100), new HashSet<Activity>());
+			
+			coordinates.put(new Coordinate(-34.912289,-57.957077), new HashSet<Activity>()); //Juan
+			coordinates.put(new Coordinate(-34.920273,-57.932541), new HashSet<Activity>()); //Palpa
+			coordinates.put(new Coordinate(-34.921769,-57.926146), new HashSet<Activity>()); //Mati
+			coordinates.put(new Coordinate(-34.91155,-57.94874), new HashSet<Activity>()); //ACN
+			
 		    map.setCoordinates(coordinates);
 		    
 	        //Creating activities for coordinates		    

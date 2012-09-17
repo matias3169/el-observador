@@ -24,28 +24,42 @@ var POSITION;
 //--------------------------------------------------------
 $(document).ready(function(){
 	
-	$.getJSON("getCordinates/1", function(json) {
+	$.getJSON("getDefaultCordinate", function(json) {
     	console.log(json);
+   	
+		//getCurrentLocation();
+		//Se crea una variable con la latitud y la longitud
+    	var latlng = new google.maps.LatLng(json.posX, json.posY);
+	    
+		//Se setean las configuraciones del mapa
+		var myOptions = {
+	      zoom: 13,
+	      disableDefaultUI: true,
+	      center: latlng,
+	      mapTypeId: google.maps.MapTypeId.TERRAIN
+	    };
+	    
+		//Se crea el mapa en el elemento con id "map_canvas" con las opciones indicadas
+	    MAP = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	    
+	    //Se agrega un listener al evento click en el mapa
+	    google.maps.event.addListener(MAP, 'click', function(event) {
+	    	//placeMarker(event.latLng);
+	      });
+	    
+	    //Recuperamos coordenadas
+	   $.getJSON("getCordinates/1", function(jsonPMs) {
+	    	console.log(jsonPMs);
+	    	$.each(jsonPMs, function(i, node) {
+	    		console.log(node.posX);
+	    		console.log(node.posY);
+	    		
+	    		var latlngPM = new google.maps.LatLng(node.posX, node.posY);
+	    		
+	    		placeMarker(latlngPM);
+	    	});
+		});
 	});
-	//getCurrentLocation();
-	//Se crea una variable con la latitud y la longitud
-	var latlng = new google.maps.LatLng(-34.9118767, -57.95701059999999);
-    
-	//Se setean las configuraciones del mapa
-	var myOptions = {
-      zoom: 13,
-      disableDefaultUI: true,
-      center: latlng,
-      mapTypeId: google.maps.MapTypeId.TERRAIN
-    };
-    
-	//Se crea el mapa en el elemento con id "map_canvas" con las opciones indicadas
-    MAP = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    
-    //Se agrega un listener al evento click en el mapa
-    google.maps.event.addListener(MAP, 'click', function(event) {
-    	placeMarker(event.latLng);
-      });
 	
 });
  
