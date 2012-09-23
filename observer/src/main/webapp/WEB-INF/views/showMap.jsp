@@ -14,6 +14,24 @@
  <script type="text/javascript" src="resources/js/jquery.jrumble.1.3.js"></script>
  <script type="text/javascript" src="resources/js/scripts.js"></script>
   <script type="text/javascript" src="resources/js/maps.js"></script>
+  <script type="text/javascript" src="resources/js/js_scroll/jquery.nicescroll.js"></script>	
+  
+  
+  
+  <!-- First, add jQuery (and jQuery UI if using custom easing or animation -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<!-- Second, add the Timer and Easing plugins -->
+<script type="text/javascript" src="resources/js/js_galeria/jquery.timers-1.2.js"></script>
+<script type="text/javascript" src="resources/js/js_galeria/jquery.easing.1.3.js"></script>
+
+<!-- Third, add the GalleryView Javascript and CSS files -->
+<script type="text/javascript" src="resources/js/js_galeria/jquery.galleryview-3.0-dev.js"></script>
+<link type="text/css" rel="stylesheet" href="resources/css/css_galeria/jquery.galleryview-3.0-dev.css" />
+
+<script type="text/javascript" src="resources/js/js_elasticImput/jquery.elastic.source.js"></script>
+
 
 </head>
 
@@ -33,7 +51,8 @@
  </li>
     <li class="menuIzquierdo">
   <div id="item2">
-   <!--<img src="./img/sitios_interes.png" width="50" height="50" />--></div>
+   <!--<img src="./img/sitios_interes.png" width="50" height="50" />-->
+   </div>
  </li>
     <li class="menuIzquierdo">
   <div id="item3">

@@ -96,8 +96,9 @@ z-index:10;
 }
 
 
-
-/* Z-index of #mask must lower than #boxes .window */
+/* ------------------------------------------------- */
+/* Estilos aplicados para la ventana de actividades  */
+/* ------------------------------------------------- */
 #mask {
   position:absolute;
   left: 0px;
@@ -113,9 +114,8 @@ z-index:10;
   height:200px;
   display:none;
   z-index:9999;
-  padding:20px;
-}
- 
+  padding:5px;
+} 
  
 /* Customize your modal window here, you can add background image too */
 #boxes #dialog {
@@ -123,7 +123,130 @@ z-index:10;
   height:203px;
   background-color:#FFFFFF;
   align:center;
-
 }
+
+#btnCerrar {
+	margin-right: 5px;
+	margin-top: 5px;
+	float:right;
+}
+
+#headActivity{
+	text-align: center;
+}
+
+#bodyActivity{
+	float:left;
+	width: 60%;
+	height: 100%;
+	background-color: #E6E6E6;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;	
+}
+
+#inteactionActivity{
+	float:right;
+	width: 39.5%;
+	height: 100%;
+	background-color: #FFFFFF;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border-style:solid;
+	border-width:1px;
+	border-color: #000000;
+	overflow: auto;
+}
+
+#descriptionActivity{
+	float:none;
+	margin-top: 100px;
+	text-align: center;
+	background-color: #CCCDCC;
+}
+
+#myGaleria{
+	position: absolute;
+	bottom: 0px;
+	margin-left: 10%;
+	margin-bottom: 30px;	
+}
+
+.comentario {
+	margin-top:30px;
+    -background-color: #336699;    
+   	background: #65a9d7;
+   	background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   	background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   	background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   	background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   	background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   	-webkit-border-radius: 8px;
+   	-moz-border-radius: 8px;
+   	border-radius: 8px;
+   	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   	-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   	box-shadow: rgba(0,0,0,1) 0 1px 0;
+   	text-shadow: rgba(0,0,0,.4) 0 1px 0;   
+    width:76%;
+    padding: 5px;
+    float: left;
+    color: #fff;
+}
+
+.bocado-izq {
+	
+	margin-top: 50px;
+    border-bottom: 20px solid transparent;
+    border-right: 25px solid #3e779d;
+    border-top: 20px solid transparent;
+    height: 0;
+    width: 0;
+    float: left;
+}
+
+.textComents{
+width: 97%;
+}
+
+.userIcon{
+	float: left;
+	margin-top: 50px;
+}
+
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5.5px 11px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+   
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
 
  
