@@ -32,10 +32,10 @@
 			<div id="myGaleria">
 				<div id="multimedia">				
 					<ul id="gallery">
+						<li style="display: none"><iframe width="420" height="315" src="http://www.youtube.com/embed/h-E6Lv9C6kI" frameborder="0" allowfullscreen></iframe></li>
 						<li style="display: none"><img src="resources/img/cerrar_cuadrado_gris.png" /></li>
 						<li style="display: none"><img src="resources/img/cerrar_cuadrado_gris.png" /></li>
-						<li style="display: none"><img src="resources/img/cerrar_cuadrado_gris.png" /></li>
-						<li style="display: none"><img src="resources/img/book.png" data-frame="../gv/path/to/thumb.jpg" alt="image" /></li>
+						<li style="display: none"><img src="resources/img/book.png" data-frame="resources/img/cerrar_cuadrado_gris.png" alt="image" /></li>
 					</ul>
 				</div>
 			</div>

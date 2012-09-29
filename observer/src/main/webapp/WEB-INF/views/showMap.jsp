@@ -5,17 +5,22 @@
  <head>
  <meta charset="utf-8"/>
  <title>El Observador</title>
-    <link href="resources/css/app.css" rel="stylesheet" type="text/css" media="all"/>
+ 
+ <link href="resources/css/app.css" rel="stylesheet" type="text/css" media="all"/>
  <link href="resources/css/tipTip.css" rel="stylesheet" type="text/css" media="all"/>
+  
  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+
+ <!-- 
  <script type="text/javascript" src="resources/js/jquery-1.8.0.js"></script>
  <script type="text/javascript" src="resources/js/jquery.tipTip.js"></script>
  <script type="text/javascript" src="resources/js/jquery.tipTip.minified.js"></script>
  <script type="text/javascript" src="resources/js/jquery.jrumble.1.3.js"></script>
- <script type="text/javascript" src="resources/js/scripts.js"></script>
-  <script type="text/javascript" src="resources/js/maps.js"></script>
-  <script type="text/javascript" src="resources/js/js_scroll/jquery.nicescroll.js"></script>	
-  
+ <script type="text/javascript" src="resources/js/js_scroll/jquery.nicescroll.js"></script>
+ -->
+ 
+ 
+  	
   
   
   <!-- First, add jQuery (and jQuery UI if using custom easing or animation -->
@@ -29,10 +34,11 @@
 <!-- Third, add the GalleryView Javascript and CSS files -->
 <script type="text/javascript" src="resources/js/js_galeria/jquery.galleryview-3.0-dev.js"></script>
 <link type="text/css" rel="stylesheet" href="resources/css/css_galeria/jquery.galleryview-3.0-dev.css" />
-
 <script type="text/javascript" src="resources/js/js_elasticImput/jquery.elastic.source.js"></script>
 
-
+<script type="text/javascript" src="resources/js/scripts.js"></script>
+<script type="text/javascript" src="resources/js/maps.js"></script>
+ 
 </head>
 
 

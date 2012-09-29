@@ -1,12 +1,12 @@
 
 /*script para los tooltips*/
-$(function(){
+/*$(function(){
 $(".someClass").tipTip({defaultPosition: "right",delay: "10", attribute:"text"});
 });
 
 $(function(){
 $("logo").tipTip({defaultPosition: "right",delay: "10", attribute:"text"});
-});
+});*/
 
 
 //----------------------------------------
@@ -95,7 +95,7 @@ function showActivity()
     var winH = $(window).height();
     var winW = $(window).width();
     
-    //modificamos el tamaño de la ventana
+    //modificamos el tamaï¿½o de la ventana
     //alert(((80*100)/maskWidth));
     $("#dialog").css('width', ((80*maskWidth)/100));
     $("#dialog").css('height',((80*$(window).height())/100));
@@ -130,7 +130,7 @@ function verGaleria(){
 	transition_speed: 200, 		//INT - duration of panel/frame transition (in milliseconds)
 	transition_interval: 4000, 		//INT - delay between panel/frame transitions (in milliseconds)
 	easing: 'swing', 				//STRING - easing method to use for animations (jQuery provides 'swing' or 'linear', more available with jQuery UI or Easing plugin)
-	show_panels: true, 				//BOOLEAN - flag to show or hide panel portion of gallery
+	show_panels: false, 				//BOOLEAN - flag to show or hide panel portion of gallery
 	show_panel_nav: false, 			//BOOLEAN - flag to show or hide panel navigation buttons
 	enable_overlays: true, 			//BOOLEAN - flag to show or hide panel overlays
 	
@@ -151,8 +151,8 @@ function verGaleria(){
 	filmstrip_size: 4, 				//INT - number of frames to show in filmstrip-only gallery
 	filmstrip_style: 'scroll', 		//STRING - type of filmstrip to use (scroll = display one line of frames, scroll filmstrip if necessary, showall = display multiple rows of frames if necessary)
 	filmstrip_position: 'bottom',  	//STRING - position of filmstrip within gallery (bottom, top, left, right)
-	frame_width: 50, 				//INT - width of filmstrip frames (in pixels)
-	frame_height: 15, 				//INT - width of filmstrip frames (in pixels)
+	frame_width: 100, 				//INT - width of filmstrip frames (in pixels)
+	frame_height: 50, 				//INT - width of filmstrip frames (in pixels)
 	frame_opacity: 0.5, 			//FLOAT - transparency of non-active frames (1.0 = opaque, 0.0 = transparent)
 	frame_scale: 'crop', 			//STRING - cropping option for filmstrip images (same as above)
 	frame_gap: 5, 					//INT - spacing between frames within filmstrip (in pixels)
