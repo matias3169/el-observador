@@ -26,14 +26,17 @@ public class Coordinate {
 		this.posY = posY;
 	}
 
-	/*@Override
+	@Override
 	public int hashCode() {
 		final int prime = 31;
-		double result = 1;
-		result = prime * result + posX;
-		result = prime * result + posY;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(posX);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(posY);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
-	}*/
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -44,12 +47,13 @@ public class Coordinate {
 		if (getClass() != obj.getClass())
 			return false;
 		Coordinate other = (Coordinate) obj;
-		if (posX != other.posX)
+		if (Double.doubleToLongBits(posX) != Double
+				.doubleToLongBits(other.posX))
 			return false;
-		if (posY != other.posY)
+		if (Double.doubleToLongBits(posY) != Double
+				.doubleToLongBits(other.posY))
 			return false;
 		return true;
 	}
-
 	
 }

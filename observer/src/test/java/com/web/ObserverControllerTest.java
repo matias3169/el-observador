@@ -20,7 +20,7 @@ public class ObserverControllerTest {
 
 	@When("^I receive request$")
 	public void I_receive_request() throws Exception {
-		modelAndView = controller.handleRequest(null, null);
+		modelAndView = controller.handleRequestShowMap(null, null);
 	}
 
 	@Then("^It belongs to view '([^']*)'$")

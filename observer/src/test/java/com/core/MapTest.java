@@ -53,7 +53,7 @@ public class MapTest {
 	  }
 
 	  @When("^I give positionX (\\d+) positionY (\\d+) to Map$")
-	  public void I_give_coordinates(int posX, int posY) {
+	  public void I_give_coordinates(double posX, double posY) {
 		 Coordinate coordinate = new Coordinate(posX,posY);
 	     map.setSearchCoordinates(coordinate);
 	  }

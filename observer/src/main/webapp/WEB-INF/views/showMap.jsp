@@ -17,15 +17,13 @@
  <script type="text/javascript" src="resources/js/jquery.tipTip.minified.js"></script>
  <script type="text/javascript" src="resources/js/jquery.jrumble.1.3.js"></script>
  <script type="text/javascript" src="resources/js/js_scroll/jquery.nicescroll.js"></script>
- -->
- 
- 
-  	
+ --> 	
   
   
   <!-- First, add jQuery (and jQuery UI if using custom easing or animation -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
 
 <!-- Second, add the Timer and Easing plugins -->
 <script type="text/javascript" src="resources/js/js_galeria/jquery.timers-1.2.js"></script>
@@ -52,7 +50,7 @@
   <ul style="margin: -20px; position: relative; left: 0px; display: block; float: left; margin-top: 100px;list-style-type:none;">
  <li class="menuIzquierdo">
   <div id="item1">
-   <img id="favoritos" onclick="ShowMyPlaces();" class="someClass" src="resources/img/sitios_interes_gris.png" alt="Smiley face" width="50" height="50" text="Visulaiza tus lugares favoritos"/>
+   <img id="favoritos" onclick="ShowMyPlaces();" class="someClass" src="resources/img/sitios_interes_gris.png" alt="Smiley face" width="50" height="50" text="Visualiza tus lugares favoritos"/>
   </div>
  </li>
     <li class="menuIzquierdo">
@@ -79,5 +77,6 @@
   	<img id="logo" src="resources/img/el-mundo.png" style="width: 150px; height: 150px;"></img>
  </div>
  
-<%@include file="activity.jsp" %>
+<%@include file="activity.jsp" %> 
+ 
 </body></html>

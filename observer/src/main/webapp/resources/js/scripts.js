@@ -107,15 +107,15 @@ function showActivity()
     //transition effect
     $("#dialog").fadeIn(250); 
     
-    //cargamos la aleria
+    //cargamos la galeria
     verGaleria();
     
     //inicializamos los text elasticos
     $(".textComents").elastic();
     
     //modificamos el scrill
-    $("body").niceScroll();
-    $("#inteactionActivity").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true});
+    //$("body").niceScroll();
+    //$("#interactionActivity").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true});
 }
 
 function closeWindows()
@@ -164,5 +164,5 @@ function verGaleria(){
 
 function addComent(){
 	//alert("aprete");
-	$('#inteactionActivity').append('<div class="userIcon"><img class="userIcon" id="btnCerrar" src="resources/img/user.png" onclick="closeWindows()" width="50" height="50" /></div><div class="bocado-izq"></div><div class="comentario"><textarea class="textComents" rows="" cols=""></textarea><input class="button" type="button" value="Listo!" onclick="addComent()"></div>');
+	$('#interactionActivity').append('<div class="userIcon"><img class="userIcon" id="btnCerrar" src="resources/img/user.png" onclick="closeWindows()" width="50" height="50" /></div><div class="bocado-izq"></div><div class="comentario"><textarea class="textComents" rows="" cols=""></textarea><input class="button" type="button" value="Listo!" onclick="addComent()"></div>');
 }

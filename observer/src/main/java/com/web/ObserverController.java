@@ -1,11 +1,9 @@
 package com.web;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.servlet.ServletException;
@@ -85,6 +83,19 @@ public class ObserverController {
 //	        
 	        return null;
 	    }
+	    
+	    @RequestMapping(value="/showImageGallery", method = RequestMethod.GET)
+        public ModelAndView handleRequestImageGallery(HttpServletRequest request, HttpServletResponse response)
+                throws ServletException, IOException {            
+            return new ModelAndView("showImageGallery");
+        }
+	    
+	    @RequestMapping(value="/showVideoGallery", method = RequestMethod.GET)
+        public ModelAndView handleRequestVideoGallery(HttpServletRequest request, HttpServletResponse response)
+        		throws ServletException, IOException {
+            return new ModelAndView("showVideoGallery");
+        }
+	    
 
 		private void createMap() {
 			//Obtaining a new map instance
