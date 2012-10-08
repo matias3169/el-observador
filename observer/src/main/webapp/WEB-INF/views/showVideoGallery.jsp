@@ -19,17 +19,17 @@ ul.galeria li {
 	<ul class="galeria" id="videos">
 	    <li>
 	       <a rel="prettyPhoto[gallery2]" href="http://youtu.be/WniL0xrH-JQ">
-	           <img src="resources/img/thumbnails/flash-logo.png" alt="YouTube" width="75" height="75"/>
+	           <img src="http://img.youtube.com/vi/WniL0xrH-JQ/1.jpg" alt="YouTube" width="75" height="75"/>
 	       </a>
 	    </li>
 	    <li>	    
-	        <a rel="prettyPhoto[gallery2]" href="http://youtu.be/WniL0xrH-JQ">
-	           <img src="resources/img/thumbnails/flash-logo.png" alt="YouTube" width="75" height="75"/>
+	        <a rel="prettyPhoto[gallery2]" href="http://youtu.be/pDVORKo8rYs">
+	           <img src="http://img.youtube.com/vi/pDVORKo8rYs/1.jpg" alt="YouTube" width="75" height="75"/>
 	        </a>
 	    </li>
 	    <li>	    
 	       <a rel="prettyPhoto[gallery2]" href="http://youtu.be/QapWaQXcmvo">
-	           <img src="resources/img/thumbnails/flash-logo.png" alt="YouTube" width="75" height="75"/>
+	           <img src="http://img.youtube.com/vi/QapWaQXcmvo/1.jpg" alt="YouTube" width="75" height="75"/>
 	       </a>
 	    </li>   
 	</ul>
