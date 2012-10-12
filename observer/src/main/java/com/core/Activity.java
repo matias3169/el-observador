@@ -8,6 +8,21 @@ public class Activity {
 	private String description;
 	private HashSet<Audio> audioGallery;
 	
+	public Activity() {
+		this.id = 0;
+		this.description = "";
+	}
+	
+	public Activity(int id) {
+		this.id = id;
+		this.description = "";
+	}
+	
+	public Activity(int id, String description) {
+		this.id = id;
+		this.description = description;
+	}
+	
 	public String getDescription() {
 		return description;
 	}

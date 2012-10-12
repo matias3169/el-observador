@@ -78,8 +78,15 @@ $("#favoritos").mouseout(function(){
 //scripts de la ventana modal de la actividad
 //-------------------------------------------------------------------------------
 
-function showActivity()
+function showActivity(posX, posY)
 {
+	console.log(posX);
+	console.log(posY);
+	
+	$.getJSON("getActivity/"+posX+"/"+posY+"/", function(jsonActivity) {
+		console.log(jsonActivity);
+	});
+	
     //Get the screen height and width
     var maskHeight = $(document).height();
     var maskWidth = $(window).width();

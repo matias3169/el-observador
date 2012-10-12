@@ -84,7 +84,13 @@ var marker = new google.maps.Marker({
 	  });
 
 //Agregamos el listener al marker
-google.maps.event.addListener(marker, 'click', function() { showActivity();});
+google.maps.event.addListener(marker, 'click', function() { 
+
+	var position = marker.getPosition();
+	
+	showActivity(position.lat(), position.lng());
+	
+});
 		
 }
 

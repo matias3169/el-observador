@@ -1,6 +1,7 @@
 package com.web;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -60,6 +61,23 @@ public class ObserverController {
 //			coordinates.add(new Coordinate(10,10));
 			
 			return map.getCoordinates().keySet();
+		}
+	    
+	    @RequestMapping(value="/getActivity/{posX}/{posY}/", method = RequestMethod.GET)
+		public @ResponseBody Activity getActivity(@PathVariable double posX, @PathVariable double posY) {
+	    	
+	    	logger.info("PosX: "+roundSixDecimals(posX)+" - PosY: "+roundSixDecimals(posY));
+	    	
+	    	 Map map = Map.getInstance();
+	    	 
+	    	 Coordinate coordinate = new Coordinate(posX,posY);
+	    	 map.setSearchCoordinates(coordinate);
+	    	 
+	    	 logger.info("coordinate: "+coordinate.getPosX() +"/"+coordinate.getPosY());
+	    	 
+	    	 Activity searched_activity = new Activity();
+			 
+	    	return new Activity();//map.getActivityFromCurrentPosition(searched_activity);
 		}
 
 	    @RequestMapping(value="/showActivities.htm", method = RequestMethod.GET)
@@ -124,6 +142,11 @@ public class ObserverController {
 		    for (Coordinate coord : coordinates.keySet()) {
 		    	coordinates.put(coord, activities);
 			}
+		}
+		
+		double roundSixDecimals(double d) {
+            DecimalFormat sixDForm = new DecimalFormat("#.######");
+            return Double.valueOf(sixDForm.format(d));
 		}
 
 }
