@@ -80,10 +80,10 @@ $("#favoritos").mouseout(function(){
 
 function showActivity(posX, posY)
 {
-	console.log(posX);
-	console.log(posY);
+	console.log(posX.toFixed(6));
+	console.log(posY.toFixed(6));
 	
-	$.getJSON("getActivity/"+posX+"/"+posY+"/", function(jsonActivity) {
+	$.getJSON("getActivity/"+posX.toFixed(6)+"/"+posY.toFixed(6)+"/", function(jsonActivity) {
 		console.log(jsonActivity);
 	});
 	

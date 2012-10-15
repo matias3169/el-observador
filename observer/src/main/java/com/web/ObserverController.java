@@ -66,7 +66,7 @@ public class ObserverController {
 	    @RequestMapping(value="/getActivity/{posX}/{posY}/", method = RequestMethod.GET)
 		public @ResponseBody Activity getActivity(@PathVariable double posX, @PathVariable double posY) {
 	    	
-	    	logger.info("PosX: "+roundSixDecimals(posX)+" - PosY: "+roundSixDecimals(posY));
+	    	logger.info("PosX: "+posX+" - PosY: "+posY);
 	    	
 	    	 Map map = Map.getInstance();
 	    	 
@@ -77,7 +77,7 @@ public class ObserverController {
 	    	 
 	    	 Activity searched_activity = new Activity();
 			 
-	    	return new Activity();//map.getActivityFromCurrentPosition(searched_activity);
+	    	return map.getActivityFromCurrentPosition(searched_activity);
 		}
 
 	    @RequestMapping(value="/showActivities.htm", method = RequestMethod.GET)
@@ -129,24 +129,22 @@ public class ObserverController {
 			
 		    map.setCoordinates(coordinates);
 		    
-	        //Creating activities for coordinates		    
-			HashSet<Activity>  activities = new HashSet<Activity>();			
-			Activity temp_activity = new Activity();
-			temp_activity.setId(1);
-			temp_activity.setDescription("Actividad1");
-		    activities.add(temp_activity);
-		    
+	       	    
 		    //Setting activities to coordinates
 		    coordinates = map.getCoordinates();
 		    
+		    int id = 1;
+		    
 		    for (Coordinate coord : coordinates.keySet()) {
+		    	 //Creating activities for coordinates		    
+				HashSet<Activity>  activities = new HashSet<Activity>();			
+				Activity temp_activity = new Activity(id, "Actividad: " + id);
+			    activities.add(temp_activity);
+			    
 		    	coordinates.put(coord, activities);
+		    	
+		    	id++;
 			}
-		}
-		
-		double roundSixDecimals(double d) {
-            DecimalFormat sixDForm = new DecimalFormat("#.######");
-            return Double.valueOf(sixDForm.format(d));
 		}
 
 }
