@@ -85,44 +85,49 @@ function showActivity(posX, posY)
 	
 	$.getJSON("getActivity/"+posX.toFixed(6)+"/"+posY.toFixed(6)+"/", function(jsonActivity) {
 		console.log(jsonActivity);
-	});
 	
-    //Get the screen height and width
-    var maskHeight = $(document).height();
-    var maskWidth = $(window).width();
- 
-    //Set height and width to mask to fill up the whole screen
-    $('#mask').css({'width':maskWidth,'height':maskHeight});
+	
+	    //Get the screen height and width
+	    var maskHeight = $(document).height();
+	    var maskWidth = $(window).width();
+	 
+	    //Set height and width to mask to fill up the whole screen
+	    $('#mask').css({'width':maskWidth,'height':maskHeight});
+	    
+	    //transition effect     
+	    $('#mask').fadeIn(10);    
+	    $('#mask').fadeTo("slow",0.8);  
+	    
+	    //Get the window height and width
+	    var winH = $(window).height();
+	    var winW = $(window).width();
+	    
+	    //modificamos el tama�o de la ventana
+	    //alert(((80*100)/maskWidth));
+	    $("#dialog").css('width', ((80*maskWidth)/100));
+	    $("#dialog").css('height',((80*$(window).height())/100));
+	          
+	    //Set the popup window to center
+	    $("#dialog").css('top',  winH/2-$("#dialog").height()/2);
+	    $("#dialog").css('left', winW/2-$("#dialog").width()/2);
+	 
+	    
+	    $("#titulo").text(jsonActivity.description);
+	    
+	    //transition effect
+	    $("#dialog").fadeIn(250); 
+	    
+	    //cargamos la galeria
+	    //verGaleria();
+	    
+	    //inicializamos los text elasticos
+	    $(".textComents").elastic();
+	    
+	    //modificamos el scrill
+	    //$("body").niceScroll();
+	    //$("#interactionActivity").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true});
     
-    //transition effect     
-    $('#mask').fadeIn(10);    
-    $('#mask').fadeTo("slow",0.8);  
-    
-    //Get the window height and width
-    var winH = $(window).height();
-    var winW = $(window).width();
-    
-    //modificamos el tama�o de la ventana
-    //alert(((80*100)/maskWidth));
-    $("#dialog").css('width', ((80*maskWidth)/100));
-    $("#dialog").css('height',((80*$(window).height())/100));
-          
-    //Set the popup window to center
-    $("#dialog").css('top',  winH/2-$("#dialog").height()/2);
-    $("#dialog").css('left', winW/2-$("#dialog").width()/2);
- 
-    //transition effect
-    $("#dialog").fadeIn(250); 
-    
-    //cargamos la galeria
-    verGaleria();
-    
-    //inicializamos los text elasticos
-    $(".textComents").elastic();
-    
-    //modificamos el scrill
-    //$("body").niceScroll();
-    //$("#interactionActivity").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true});
+	});
 }
 
 function closeWindows()

@@ -6,11 +6,7 @@
 		</div>
 		<div id="bodyActivity">
 			<div id="descriptionActivity">
-				<p>
-				Dentro de esta actividad se buscara realizar....
-				qreqreeqwerq
-				qreqerq
-				</p>
+				<p id="titulo"></p>
 			</div>
 			<div id="myGaleria">	
 						
